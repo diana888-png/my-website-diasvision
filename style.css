@@ -1,0 +1,110 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Логотип */
+.logo {
+    display: block;
+    max-width: 350px; /* Увеличиваем размер логотипа */
+    margin: 0px auto; /* Центрируем и добавляем отступы сверху и снизу */
+    opacity: 1; /* Убираем прозрачность */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Эффекты при наведении */
+}
+
+.logo:hover {
+    transform: scale(1.2); /* Увеличение логотипа при наведении */
+}
+
+/* Заголовок */
+.header {
+    background: url('images/balcony.jpg') no-repeat center center/cover; /* Задний фон */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.header h1 {
+    margin: 20px 0 10px; /* Отступы для заголовка */
+    font-size: 2.5em; /* Увеличиваем шрифт */
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачный фон под текст */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.header p {
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачный фон под текст */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Основной контент */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.description {
+    margin-bottom: 30px;
+}
+
+.description h2 {
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    margin-top: 30px;
+}
