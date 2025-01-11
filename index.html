@@ -3,46 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakta mig</title>
+    <title>Min webbplats</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
 
-    <!-- Huvudrubrik med logo -->
+    <!-- Navigeringsmeny -->
+    <nav class="navbar">
+        <a href="#about">Om mig</a>
+        <a href="#services">Mina tjänster</a>
+        <a href="#contact">Kontakta mig</a>
+    </nav>
+
+    <!-- Huvudrubrik -->
     <header class="header">
-        <img src="img/balcony.jpg" alt="Mitt logo" class="logo"> <!-- Добавляем логотип -->
+        <img src="img/balcony.jpg" alt="Mitt logo" class="logo">
         <h1>Välkommen!</h1>
-        <p>Här kan du lära dig mer om mig och kontakta mig.</p>
+        <p>Här kan du lära dig mer om mig och mina tjänster.</p>
+        
     </header>
 
-    <!-- Huvudinnehåll -->
-    <main>
-        <section class="description">
-            <h2>Om mig</h2>
-            <p>Här kan du skriva lite om dig själv, ditt projekt eller dina tjänster. Berätta vad du gör och hur du kan hjälpa besökarna på din webbplats.</p>
-        </section>
+    <!-- Om mig -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <img src="img/digital-icon.svg" alt="Digital Icon" class="profile-photo">
+            <div class="about-text">
+                <h2>Om mig</h2>
+                <p>Hej! Jag är din digitala assistent och marknadsförare, här för att göra det digitala enkelt för dig. Oavsett om du behöver hjälp med att nå ut till rätt publik, bygga din närvaro online eller lösa digitala utmaningar – jag står redo att hjälpa dig.</p>
+                <p>Låt oss ta fram strategier som fungerar och skapa resultat som syns. Tveka inte att höra av dig – tillsammans når vi dina mål!</p>
+                <button class="cta-button" onclick="window.location.href='#contact'">Kontakta mig</button>
+            </div>
+        </div>
+    </section>
+    <!-- Mina tjänster -->
+    <section id="services" class="services">
+        <h2>Mina tjänster</h2>
+        <div class="project-cards">
+            <div class="card">
+                <img src="img/service1.jpg" alt="Tjänst 1">
+                <h3>Tjänst 1</h3>
+                <p>Kort beskrivning av tjänsten.</p>
+            </div>
+            <div class="card">
+                <img src="img/service2.jpg" alt="Tjänst 2">
+                <h3>Tjänst 2</h3>
+                <p>Kort beskrivning av tjänsten.</p>
+            </div>
+            <div class="card">
+                <img src="img/service3.jpg" alt="Tjänst 3">
+                <h3>Tjänst 3</h3>
+                <p>Kort beskrivning av tjänsten.</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="contact-form">
-            <h2>Kontakta mig</h2>
-            <form>
-                <label for="name">Ditt namn:</label>
-                <input type="text" id="name" placeholder="Skriv ditt namn">
+    <!-- Kontakta mig -->
+    <section id="contact" class="contact-section">
+        <h2>Kontakta mig</h2>
+        <p>Fyll i formuläret nedan så kontaktar jag dig så snart som möjligt.</p>
+        <form>
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Ditt namn" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Din e-postadress" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Ditt meddelande" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Skicka</button>
+        </form>
+    </section>
 
-                <label for="email">Din e-post:</label>
-                <input type="email" id="email" placeholder="Skriv din e-postadress">
+    <footer class="footer">
+    <div class="footer-container">
+        <!-- Контактная информация -->
+        <div class="footer-contacts">
+            <p><strong>Telefon:</strong> <a href="tel:+46123456789" class="contact-link">+46 123 456 789</a></p>
+            <p><strong>E-post:</strong> <a href="mailto:info@mittforetag.se" class="contact-link">info@mittforetag.se</a></p>
+        </div>
+    
+            <!-- Основной текст -->
+        <div class="footer-center">
+            <p>&copy; 2025 DiasVision Consulting | Alla rättigheter förbehållna</p>
+          
+        </div>
 
-                <label for="message">Meddelande:</label>
-                <textarea id="message" placeholder="Skriv ditt meddelande" rows="5"></textarea>
+        <!-- Социальные иконки -->
+        <div class="footer-icons">
+            <a href="https://www.instagram.com" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" class="social-link">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+    </div>
 
-                <button type="submit">Skicka</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- Sidfot -->
-    <footer>
-        <p>&copy; 2025. Alla rättigheter förbehållna.</p>
     </footer>
 </body>
 </html>

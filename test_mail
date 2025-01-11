@@ -1,0 +1,12 @@
+<?php
+$to = "avdoiand@gmail.com";
+$subject = "Тестовое письмо";
+$message = "Это тестовое письмо для проверки работы функции mail()";
+$headers = "From: test@example.com";
+
+if (mail($to, $subject, $message, $headers)) {
+    echo "Письмо успешно отправлено!";
+} else {
+    echo "Ошибка при отправке письма.";
+}
+?>
