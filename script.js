@@ -1,86 +1,14 @@
-// Обработка отправки формы
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Предотвращаем перезагрузку страницы
-
-    // Получаем данные из формы
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-
-    // Проверяем, заполнены ли поля
-    if (name && email) {
-        alert(`Спасибо, ${name}! Мы свяжемся с вами по адресу ${email}.`);
-    } else {
-        alert('Пожалуйста, заполните все поля.');
-    }
-});
-
-
-// Анимация появления секций
-const sections = document.querySelectorAll('section');
-
-function showSectionsOnScroll() {
-    const triggerBottom = window.innerHeight / 1.2;
-
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-
-        if (sectionTop < triggerBottom) {
-            section.classList.add('visible');
-        }
-    });
-}
-
-window.addEventListener('scroll', showSectionsOnScroll);
-
-
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Предотвращаем перезагрузку страницы
-
-    // Получаем данные из формы
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Проверяем, заполнены ли поля
-    if (name && email && message) {
-        // Отправляем данные на сервер
-        fetch('send_mail.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, message }),
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert(`Tack, ${name}! Ditt meddelande har skickats.`); // "Спасибо, [имя]! Ваше сообщение отправлено."
-                    document.querySelector('form').reset(); // Очистить форму
-                } else {
-                    alert(data.message); // Показываем сообщение об ошибке
-                }
-            })
-            .catch(error => {
-                console.error('Fel:', error);
-                alert('Ett fel uppstod. Försök igen senare.'); // "Произошла ошибка. Попробуйте позже."
-            });
-    } else {
-        alert('Vänligen fyll i alla fält.'); // "Пожалуйста, заполните все поля."
-    }
-});
-
-
 document.querySelector('form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Предотвращаем перезагрузку страницы
+    event.preventDefault(); // Förhindrar att sidan laddas om
 
-    // Получаем данные из формы
+    // Hämtar data från formuläret
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    // Проверяем, заполнены ли поля
+    // Kontrollera att alla fält är ifyllda
     if (name && email && message) {
-        // Отправляем данные на сервер
+        // Skicka data till servern
         fetch('send_mail.php', {
             method: 'POST',
             headers: {
@@ -88,39 +16,27 @@ document.querySelector('form').addEventListener('submit', function (event) {
             },
             body: JSON.stringify({ name, email, message }),
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Скрываем форму и показываем подтверждение
-                    const form = document.querySelector('form');
-                    const confirmation = document.createElement('p');
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Ersätter formuläret med en bekräftelse
+                const form = document.querySelector('form');
+                const confirmation = document.createElement('p');
+                confirmation.textContent = data.message; // Meddelandet från PHP
+                confirmation.style.color = 'green';
+                confirmation.style.fontSize = '1.2rem';
+                confirmation.style.marginTop = '20px';
 
-                    confirmation.textContent = `Tack, ${name}! Ditt meddelande har skickats.`; // "Спасибо, [имя]! Ваше сообщение отправлено."
-                    confirmation.style.color = 'green';
-                    confirmation.style.fontSize = '1.2rem';
-                    confirmation.style.marginTop = '20px';
-
-                    form.replaceWith(confirmation); // Заменяем форму на сообщение
-                } else {
-                    alert(data.message); // Показываем сообщение об ошибке
-                }
-            })
-            .catch(error => {
-                console.error('Fel:', error);
-                alert('Ett fel uppstod. Försök igen senare.'); // "Произошла ошибка. Попробуйте позже."
-            });
+                form.replaceWith(confirmation);
+            } else {
+                alert(data.message); // Visar felmeddelandet från PHP
+            }
+        })
+        .catch(error => {
+            console.error('Fel:', error);
+            alert('Ett fel inträffade. Försök igen senare.'); // Om ett fel inträffar
+        });
     } else {
-        alert('Vänligen fyll i alla fält.'); // "Пожалуйста, заполните все поля."
+        alert('Fyll i alla fält.'); // Om fält saknas
     }
 });
-
-if (data.success) {
-    const confirmation = document.createElement('p');
-    confirmation.textContent = `Tack! Ditt meddelande har skickats.`; // "Ваше сообщение отправлено."
-    confirmation.style.color = 'green';
-    confirmation.style.fontSize = '1.2rem';
-    confirmation.style.marginTop = '20px';
-
-    const form = document.querySelector('form');
-    form.replaceWith(confirmation);
-}

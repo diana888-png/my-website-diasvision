@@ -58,18 +58,18 @@ body {
 }
 
 .cta-button {
-    background-color: #0066cc;
-    color: #fff;
+    background-color: #ef860ecc;
+    color: #ffffff;
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 2rem;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #005bb5;
+    background-color: #ef9104;
 }
 /* Навигация */
 .navbar {
@@ -131,7 +131,7 @@ section {
 }
 
 .card {
-    background-color: rgb(231, 110, 63);
+    background-color: #555;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -316,8 +316,8 @@ section {
 }
 
 .contact-section h2 {
-    font-size: 2.2rem;
-    color: #333;
+    font-size: 3.2rem;
+    color: #ef860e;
     margin-bottom: 15px;
 }
 
@@ -334,9 +334,9 @@ section {
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 93%;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #ef860e;
     border-radius: 5px;
     font-size: 1rem;
     background-color: #f9f9f9;
@@ -345,7 +345,7 @@ section {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #0066cc;
+    border-color: #ef860e;
     box-shadow: 0 0 8px rgba(0, 102, 204, 0.3);
     outline: none;
 }
@@ -355,7 +355,7 @@ section {
     width: 100%;
     padding: 15px;
     font-size: 1.2rem;
-    background-color: #0066cc;
+    background-color: #ef860e;
     color: white;
     border: none;
     border-radius: 5px;
@@ -364,12 +364,12 @@ section {
 }
 
 .submit-button:hover {
-    background-color: #005bb5;
+    background-color: #ef860e;
     transform: scale(1.02);
 }
 
 .submit-button:active {
-    background-color: #004a99;
+    background-color: #ef860e;
 }
 
 
